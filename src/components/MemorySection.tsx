@@ -13,20 +13,16 @@ export default function MemorySection() {
   const lenis = useLenis();
   const sectionRef = useRef<HTMLElement>(null);
 
-  // Tilt scoped to THIS section only (target ref, not the window). Progress is
-  // 0 when the section is entering from the bottom, 0.5 at center, 1 as it
-  // exits the top — so the phone tilts 0° -> 40° -> 0° and sits flat whenever
+  // "start end" -> Tilt starts (0°) when the top of the section (Preserve Memories) hits the bottom of the screen.
+  // "end center" -> Tilt completes (30°) when the bottom of the section (Privacy button) hits the center of the screen.
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start end", "end start"],
+    offset: ["start end", "end center"],
   });
-  // Phone smoothly rotates from 0° to 30° as the section scrolls from the bottom
-  // of the screen to the 80% mark (0 to 0.8 progress). It holds at 30° for the
-  // rest of the scroll. When scrolling back up, it stays at 30° until it hits
-  // the 80% mark, at which point it smoothly unwinds back to 0°.
-  const phoneRotate = useSpring(useTransform(scrollYProgress, [0, 0.8, 1], [0, 30, 30]), {
-    stiffness: 40,
-    damping: 16,
+
+  const phoneRotate = useSpring(useTransform(scrollYProgress, [0, 1], [0, 30]), {
+    stiffness: 45,
+    damping: 18,
   });
 
   return (
@@ -42,7 +38,7 @@ export default function MemorySection() {
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false, margin: "10000px 0px -20% 0px" }}
               className="font-adlam text-[42px] lg:text-[52px] leading-[1.2] text-[#222222] tracking-[-0.04em] mb-6 max-w-[640px]"
             >
               Preserve Memories. Extend Conversations
@@ -50,7 +46,7 @@ export default function MemorySection() {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false, margin: "10000px 0px -20% 0px" }}
               transition={{ delay: 0.2 }}
               className="text-[16px] lg:text-[17px] leading-[28px] text-[#222222] max-w-[560px]"
             >
@@ -94,7 +90,7 @@ export default function MemorySection() {
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: false, margin: "10000px 0px -20% 0px" }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               style={{ rotate: phoneRotate }}
               className="relative z-10"
@@ -109,7 +105,7 @@ export default function MemorySection() {
           <motion.button
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, margin: "10000px 0px -20% 0px" }}
             onClick={() => lenis?.scrollTo("#why-luqas", { offset: -24 })}
             className="bg-primary text-white font-medium text-[16px] px-8 py-4 rounded-full hover:bg-primary/90 transition-colors flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-105 transform duration-300"
           >

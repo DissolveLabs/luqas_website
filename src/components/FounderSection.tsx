@@ -16,7 +16,7 @@ export default function FounderSection() {
         <motion.span
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, margin: "10000px 0px -20% 0px" }}
           className="text-accent font-semibold tracking-[0.18em] uppercase text-[13px] mb-5"
         >
           Named after a father we still talk about.
@@ -24,7 +24,7 @@ export default function FounderSection() {
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, margin: "10000px 0px -20% 0px" }}
           transition={{ delay: 0.1 }}
           className="font-adlam text-[42px] lg:text-[55px] leading-[1.2] text-white tracking-[-0.03em] mb-7"
         >
@@ -33,7 +33,7 @@ export default function FounderSection() {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, margin: "10000px 0px -20% 0px" }}
           transition={{ delay: 0.2 }}
           className="text-[17px] lg:text-[19px] leading-[32px] text-white/95 max-w-[720px]"
         >
@@ -44,7 +44,7 @@ export default function FounderSection() {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, margin: "10000px 0px -20% 0px" }}
           transition={{ delay: 0.4 }}
           className="flex items-center justify-center gap-2 mx-auto text-accent text-[19px] mt-12 font-adlam"
         >

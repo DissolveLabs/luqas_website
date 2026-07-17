@@ -4,9 +4,10 @@ import { ReactLenis } from "@studio-freight/react-lenis";
 import { ReactNode } from "react";
 
 export default function SmoothScroll({ children }: { children: ReactNode }) {
-  return (
-    <ReactLenis root options={{ lerp: 0.08, duration: 1.5 }}>
-      {children}
-    </ReactLenis>
-  );
+  // We have disabled ReactLenis here because its JavaScript-based physics
+  // engine was conflicting with your laptop's precision touchpad, causing
+  // the scroll to queue up, freeze, and jump.
+  // Returning children directly restores the browser's native, 100% responsive
+  // hardware-accelerated scrolling.
+  return <>{children}</>;
 }

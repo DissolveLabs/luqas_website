@@ -77,7 +77,7 @@ export default function Navbar({ showReturnHome = false }: { showReturnHome?: bo
               opacity: shouldHideText ? 0 : 1,
             }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="relative z-10"
+            className="relative z-10 -mt-2"
           >
             <Image src="/sources/Hero/logo-text.svg" alt="Luqas" width={60} height={16} className="h-4 w-[40px]" />
           </motion.div>

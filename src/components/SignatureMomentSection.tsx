@@ -44,7 +44,7 @@ const CARDS = [
 
 export default function SignatureMomentSection() {
   return (
-    <section id="the-call" className="w-full bg-dark relative overflow-hidden py-24 lg:py-28 px-4 scroll-mt-0 mt-12">
+    <section id="the-call" className="w-full bg-dark relative overflow-hidden py-24 lg:py-28 px-4 scroll-mt-0">
       {/* Decorative circles */}
       <div className="absolute bottom-[-60px] right-[60px] w-[150px] h-[150px] bg-primary rounded-full opacity-90 pointer-events-none" />
       <div className="absolute top-[140px] right-[26%] w-[24px] h-[24px] bg-primary/70 rounded-full pointer-events-none hidden lg:block" />
@@ -55,7 +55,7 @@ export default function SignatureMomentSection() {
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, margin: "10000px 0px -20% 0px" }}
             className="block text-accent font-semibold tracking-[0.18em] uppercase text-[13px] mb-4"
           >
             The Signature Moment
@@ -63,7 +63,7 @@ export default function SignatureMomentSection() {
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, margin: "10000px 0px -20% 0px" }}
             transition={{ delay: 0.1 }}
             className="font-adlam text-[42px] lg:text-[55px] leading-[1.15] text-white tracking-[-0.03em] mb-10 max-w-[480px]"
           >
@@ -76,7 +76,7 @@ export default function SignatureMomentSection() {
                 key={card.title}
                 initial={{ opacity: 0, x: -40 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
+                viewport={{ once: false, margin: "10000px 0px -20% 0px" }}
                 transition={{ duration: 0.5, delay: i * 0.12, ease: "easeOut" }}
                 className={`flex items-center gap-6 rounded-[24px] p-6 lg:p-7 bg-[#282A5A] ${card.highlight ? "border border-accent" : "border border-white/5"}`}
               >
@@ -124,7 +124,7 @@ export default function SignatureMomentSection() {
           <motion.div
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: false, margin: "10000px 0px -20% 0px" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="relative z-10"
           >

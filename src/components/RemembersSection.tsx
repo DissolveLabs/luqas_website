@@ -47,7 +47,7 @@ export default function RemembersSection() {
         <motion.span
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, margin: "10000px 0px -20% 0px" }}
           className="text-primary font-semibold tracking-[0.18em] uppercase text-[13px] mb-4"
         >
           Memory
@@ -55,7 +55,7 @@ export default function RemembersSection() {
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, margin: "10000px 0px -20% 0px" }}
           transition={{ delay: 0.1 }}
           className="font-adlam text-[42px] lg:text-[55px] leading-[1.15] text-[#222222] tracking-[-0.04em] mb-6 text-center max-w-[720px]"
         >
@@ -64,7 +64,7 @@ export default function RemembersSection() {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, margin: "10000px 0px -20% 0px" }}
           transition={{ delay: 0.2 }}
           className="text-[17px] lg:text-[19px] leading-[30px] text-[#222222] text-center max-w-[760px] mb-16"
         >
@@ -87,7 +87,7 @@ export default function RemembersSection() {
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
+              viewport={{ once: false, margin: "10000px 0px -20% 0px" }}
               transition={{ duration: 0.6, ease: "easeOut" }}
               className="relative z-10 bg-white rounded-[28px] shadow-[0_30px_70px_rgba(78,84,200,0.12)] border border-gray/5 p-7 lg:p-9 w-full max-w-[500px]"
             >
@@ -102,7 +102,7 @@ export default function RemembersSection() {
                     key={item.when}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false, margin: "10000px 0px -20% 0px" }}
                     transition={{ duration: 0.5, delay: 0.15 * i }}
                     className="relative grid grid-cols-[auto_1fr] gap-4 pb-7 last:pb-0"
                   >
@@ -127,7 +127,7 @@ export default function RemembersSection() {
                 key={f.title}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
+                viewport={{ once: false, margin: "10000px 0px -20% 0px" }}
                 transition={{ duration: 0.5, delay: 0.1 * i }}
                 className={`flex items-start gap-6 py-8 ${i > 0 ? "border-t border-gray/10" : ""}`}
               >

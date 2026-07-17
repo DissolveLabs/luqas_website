@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const NAV_LINKS = [
   { label: "About", href: "#why-luqas" },
@@ -8,32 +9,46 @@ const NAV_LINKS = [
 ];
 
 export default function Footer() {
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+  };
+
   return (
     <footer className="w-full bg-primary text-white pt-20 pb-10">
       <div className="max-w-[1250px] mx-auto px-4 md:px-6 flex flex-col gap-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[auto_auto_1fr_auto_auto] gap-x-16 gap-y-10 items-start">
+        <motion.div 
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, margin: "10000px 0px -10% 0px" }}
+          variants={{
+            hidden: { opacity: 0 },
+            show: { opacity: 1, transition: { staggerChildren: 0.1 } }
+          }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[auto_auto_1fr_auto_auto] gap-x-16 gap-y-10 items-start"
+        >
           {/* Brand */}
-          <div className="flex flex-col items-start">
+          <motion.div variants={itemVariants} className="flex flex-col items-start">
             <Image src="/sources/footer/logo-footer.svg" alt="Luqas" width={96} height={100} className="w-[96px] h-[100px]" />
-          </div>
+          </motion.div>
 
           {/* Nav links */}
-          <nav className="flex flex-col gap-3.5 pt-1">
+          <motion.nav variants={itemVariants} className="flex flex-col gap-3.5 pt-1">
             {NAV_LINKS.map((link) => (
               <a key={link.label} href={link.href} className="text-[15px] text-white/85 hover:text-white transition-colors">
                 {link.label}
               </a>
             ))}
-          </nav>
+          </motion.nav>
 
           {/* Address */}
-          <div className="flex flex-col gap-4 pt-1">
+          <motion.div variants={itemVariants} className="flex flex-col gap-4 pt-1">
             <span className="text-[13px] font-bold tracking-[0.1em] uppercase text-white">Address</span>
             <span className="text-[16px] text-white/85">42 Innovation Drive, Suite 300,<br />San Francisco, CA 94105</span>
-          </div>
+          </motion.div>
 
           {/* Contact */}
-          <div className="flex flex-col gap-4 pt-1">
+          <motion.div variants={itemVariants} className="flex flex-col gap-4 pt-1">
             <span className="text-[13px] font-bold tracking-[0.1em] uppercase text-white">Contact Us</span>
             <a href="tel:+14150001234" className="flex items-center gap-3 text-white/85 text-[15px] hover:text-white transition-colors">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" /></svg>
@@ -43,10 +58,10 @@ export default function Footer() {
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="2" /><path d="M4 7l6.2 4.65a3 3 0 0 0 3.6 0L20 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
               hello@luqas.app
             </a>
-          </div>
+          </motion.div>
 
           {/* Social */}
-          <div className="flex flex-col gap-4 pt-1">
+          <motion.div variants={itemVariants} className="flex flex-col gap-4 pt-1">
             <span className="text-[13px] font-bold tracking-[0.1em] uppercase text-white">Follow Us</span>
             <div className="flex items-center gap-5">
               <a href="https://facebook.com/luqasai" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-white/85 hover:text-white transition-colors">
@@ -59,15 +74,21 @@ export default function Footer() {
                 <svg width="19" height="19" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
               </a>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         <div className="w-full h-[1px] bg-white/15" />
 
-        <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-4 text-[14px] text-white/85">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: false, margin: "10000px 0px -10% 0px" }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="flex flex-col-reverse md:flex-row justify-between items-center gap-4 text-[14px] text-white/85"
+        >
           <span>© 2026 All Rights Reserved | Company No 09145673 | Vat No GB265704102</span>
           <a href="#" className="underline underline-offset-4 hover:text-white transition-colors">Privacy policy</a>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );

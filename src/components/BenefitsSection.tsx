@@ -86,7 +86,7 @@ export default function BenefitsSection() {
           variants={textContainerVariants}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, margin: "-50px" }}
+          viewport={{ once: false, margin: "10000px 0px -20% 0px" }}
         >
           <motion.div variants={fadeUpVariants} className="flex items-center gap-2 mb-4">
             <motion.div 
@@ -115,7 +115,7 @@ export default function BenefitsSection() {
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, margin: "0px" }}
+          viewport={{ once: false, margin: "10000px 0px -20% 0px" }}
         >
           {/* Benefit 1 */}
           <motion.div variants={leftCardVariants}>
