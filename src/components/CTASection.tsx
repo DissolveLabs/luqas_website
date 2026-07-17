@@ -67,7 +67,7 @@ export default function CTASection() {
                 alt="Luqas app preview"
                 width={634}
                 height={450}
-                className="w-full max-w-[440px] lg:max-w-[500px] h-auto object-contain drop-shadow-2xl block translate-y-[24px]"
+                className="w-full max-w-[440px] lg:max-w-[500px] h-auto object-contain drop-shadow-2xl block translate-y-[24px] origin-bottom scale-[1.15] lg:scale-[1.25]"
               />
             </motion.div>
           </motion.div>
