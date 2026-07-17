@@ -224,8 +224,8 @@ export default function PhoneCallDemo() {
               </div>
             </div>
 
-            {/* 20px gap, then controls pinned near the bottom — shifted up 5px per request */}
-            <div className="mt-5 flex items-center justify-center gap-[44px] -translate-y-[5px]">
+            {/* 20px gap, then controls pinned near the bottom */}
+            <div className="mt-5 flex items-center justify-center gap-[44px] -translate-y-[25px]">
             <button
               onClick={() => setSpeakerOn(false)}
               className={`w-[56px] h-[56px] rounded-full flex items-center justify-center transition-colors ${!speakerOn ? "bg-primary text-white" : "bg-[#EFEFFC] text-primary hover:bg-[#E2E2F8]"}`}

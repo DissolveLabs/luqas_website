@@ -35,8 +35,8 @@ export default function RoadmapSection() {
   };
 
   const numberVariants: Variants = {
-    hidden: { opacity: 0.3, filter: "grayscale(100%) blur(1px)" },
-    show: { opacity: 1, filter: "grayscale(0%) blur(0px)", transition: { duration: 0.5 } }
+    hidden: { opacity: 0.3 },
+    show: { opacity: 1, transition: { duration: 0.5 } }
   };
 
   const dotVariants: Variants = {
