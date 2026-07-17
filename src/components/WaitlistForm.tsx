@@ -191,9 +191,7 @@ export default function WaitlistForm({
             initial={{ opacity: 0, y: -4, height: 0 }}
             animate={{ opacity: 1, y: 0, height: "auto" }}
             exit={{ opacity: 0, y: -4, height: 0 }}
-            className={`text-[13.5px] font-medium mt-2 px-4 sm:px-6 text-center sm:text-left ${
-              variant === "gold" ? "text-white/90" : "text-[#E05252]"
-            }`}
+            className={`text-[13.5px] font-medium mt-2 px-4 sm:px-6 text-center sm:text-left text-[#E05252]`}
           >
             <div className="py-1">{errorMessage}</div>
           </motion.div>
