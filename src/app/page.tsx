@@ -1,101 +1,199 @@
+"use client";
+
 import Image from "next/image";
+import { useRef, useEffect } from "react";
+import { motion, useAnimation, useInView, useMotionValueEvent, useScroll, type Variants } from "framer-motion";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import MemorySection from "@/components/MemorySection";
+import SignatureMomentSection from "@/components/SignatureMomentSection";
+import RemembersSection from "@/components/RemembersSection";
+import BenefitsSection from "@/components/BenefitsSection";
+import RoadmapSection from "@/components/RoadmapSection";
+import FounderSection from "@/components/FounderSection";
+import CTASection from "@/components/CTASection";
+import CustomCursor from "@/components/CustomCursor";
+import MagneticElement from "@/components/MagneticElement";
+import WaitlistForm from "@/components/WaitlistForm";
+import HeroWaveform from "@/components/HeroWaveform";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const { scrollY } = useScroll();
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+  const avatarsRef = useRef(null);
+  const avatarsInView = useInView(avatarsRef, { margin: "-50px" });
+  const avatarsControls = useAnimation();
+
+  useEffect(() => {
+    if (avatarsInView) {
+      avatarsControls.start("show");
+    }
+  }, [avatarsInView, avatarsControls]);
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if (latest < 50) {
+      avatarsControls.start("hidden");
+    }
+  });
+
+  const headline = "Some Voices Are Worth Calling Back.";
+  const words = headline.split(" ");
+
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.08, delayChildren: 0.1 }
+    }
+  };
+
+  const wordVariants: Variants = {
+    hidden: { opacity: 0, y: 30, filter: "blur(8px)" },
+    show: { opacity: 1, y: 0, filter: "blur(0px)", transition: { type: "spring", stiffness: 100, damping: 20 } }
+  };
+
+  return (
+    <main className="min-h-screen bg-background relative flex flex-col items-center overflow-hidden">
+      <CustomCursor />
+
+      {/* Dark band behind the hero card (per Figma) */}
+      <div className="absolute top-0 inset-x-0 h-[120px] bg-dark" />
+
+      {/* Hero */}
+      <section id="hero" className="w-full px-4 pt-8 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="w-full max-w-[1440px] bg-light rounded-4xl relative overflow-hidden flex flex-col min-h-[700px] md:min-h-[750px] pb-20 px-4 md:px-10 lg:px-20 mx-auto"
         >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          <Navbar />
+
+          <div className="flex flex-col lg:flex-row mt-14 lg:mt-20 justify-between items-start w-full relative z-10 gap-10">
+            {/* Left Column */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              className="flex flex-col max-w-[640px] pt-4"
+            >
+              <span className="text-primary font-medium tracking-[0.09em] uppercase mb-5 text-[15px]">Coming Early 2026</span>
+
+              <motion.h1
+                className="font-adlam text-[56px] lg:text-[84px] leading-[1.05] text-[#222222] tracking-[-0.05em] mb-7 flex flex-wrap justify-start gap-x-[16px] max-w-[620px]"
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, margin: "-100px" }}
+              >
+                {words.map((word, i) => (
+                  <motion.span key={i} variants={wordVariants} className="inline-block">
+                    {word}
+                  </motion.span>
+                ))}
+              </motion.h1>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+                className="text-[19px] leading-[30px] text-[#222222] mb-10 max-w-[560px] tracking-[-0.01em]"
+              >
+                The voices that shaped you shouldn&apos;t fade.{" "}
+                <Image src="/sources/Hero/logo-text.svg" alt="Luqas" width={65} height={17} className="h-[17px] w-[65px] inline-block align-baseline" />{" "}
+                is in private beta. Join the waitlist to be among the first to call them back.
+              </motion.p>
+
+              {/* Waitlist Form */}
+              <div id="waitlist" className="flex flex-col gap-4 relative z-10 scroll-mt-24 w-full max-w-[520px]">
+                <MagneticElement>
+                  <WaitlistForm placeholder="you@email.com" buttonLabel="Reserve Your Spot" />
+                </MagneticElement>
+
+                {/* Avatars */}
+                <motion.div
+                  ref={avatarsRef}
+                  className="flex items-center gap-2 mt-3 ml-2"
+                  initial="hidden"
+                  animate={avatarsControls}
+                  variants={{
+                    hidden: {
+                      transition: { staggerChildren: 0.1, staggerDirection: -1 }
+                    },
+                    show: {
+                      transition: { staggerChildren: 0.15, delayChildren: 0.4 }
+                    }
+                  }}
+                >
+                  <div className="flex -space-x-2">
+                    {[1, 2, 3, 4].map((num) => (
+                      <motion.div
+                        key={num}
+                        variants={{
+                          hidden: { opacity: 0, x: -20 },
+                          show: { opacity: 1, x: 0, transition: { type: "spring", stiffness: 200, damping: 20 } }
+                        }}
+                      >
+                        <Image
+                          src={`/sources/Hero/people already using profile-${num}.svg`}
+                          alt={`User ${num}`}
+                          width={32}
+                          height={32}
+                          className="w-8 h-8 rounded-full border border-white"
+                        />
+                      </motion.div>
+                    ))}
+                  </div>
+                  <motion.span
+                    variants={{
+                      hidden: { opacity: 0, filter: "blur(4px)" },
+                      show: { opacity: 1, filter: "blur(0px)", transition: { duration: 0.5, delay: 1 } }
+                    }}
+                    className="text-primary font-medium text-[14px] ml-1"
+                  >
+                    12,482 people are already in line.
+                  </motion.span>
+                </motion.div>
+              </div>
+            </motion.div>
+
+            {/* Right Column — interactive waveform (per Figma + design blueprint) */}
+            <motion.div
+              initial={{ opacity: 0, x: 60 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+              className="hidden lg:block relative w-[525px] h-[560px] flex-shrink-0 mt-6"
+            >
+              {/* Dashed orbit circle */}
+              <div className="absolute top-0 left-0 w-[525px] h-[525px] rounded-full border border-dashed border-[#8B90DE]/70" />
+              {/* Gold dot (top) */}
+              <span className="absolute top-[10px] left-[169px] w-5 h-5 bg-accent rounded-full" />
+              {/* Indigo dot (right) */}
+              <span className="absolute top-[352px] right-[-6px] w-5 h-5 bg-primary rounded-full" />
+              {/* Big indigo circle */}
+              <motion.div
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute left-[85px] top-[378px] w-[178px] h-[178px] bg-primary rounded-full"
+              />
+              {/* Interactive waveform — original bar heights, stretched full
+                  width so the outer bars reach the circle's inner edges */}
+              <HeroWaveform className="absolute top-1/2 left-0 -translate-y-1/2 w-[525px] h-[110px]" />
+            </motion.div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Sections */}
+      <MemorySection />
+      <SignatureMomentSection />
+      <RemembersSection />
+      <BenefitsSection />
+      <RoadmapSection />
+      <FounderSection />
+      <CTASection />
+      <Footer />
+    </main>
   );
 }

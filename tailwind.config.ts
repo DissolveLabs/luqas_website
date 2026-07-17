@@ -9,9 +9,24 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: "#FFFFFF",
+        foreground: "#222222",
+        primary: "#4E54C8",
+        accent: "#D4A95F",
+        light: "#F6F6FE",
+        dark: "#181A4E",
+        gray: {
+          light: "#E7E7F9",
+          DEFAULT: "#696969"
+        }
       },
+      fontFamily: {
+        adlam: ["var(--font-adlam)", "serif"],
+        sans: ["var(--font-inter)", "sans-serif"],
+      },
+      borderRadius: {
+        '4xl': '30px',
+      }
     },
   },
   plugins: [],
