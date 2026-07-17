@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+/* eslint-disable @next/next/no-img-element */
 
 export default function FeaturesSection() {
   return (
