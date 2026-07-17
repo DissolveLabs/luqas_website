@@ -71,8 +71,10 @@ export default function RoadmapSection() {
         <motion.p variants={descVariants} className="text-[16px] text-gray m-0">{desc}</motion.p>
       </div>
 
-      <motion.div variants={numberVariants} className="absolute left-[24px] top-[90px]">
-        <Image src={`/sources/launch-roadmap/0${stepNum}.svg`} alt={`0${stepNum}`} width={32} height={32} className="h-auto" />
+      <motion.div variants={numberVariants} className="absolute left-[24px] top-[80px]">
+        <span className="font-adlam text-[40px] leading-none text-transparent [-webkit-text-stroke:2px_#4E54C8]">
+          0{stepNum}
+        </span>
       </motion.div>
     </motion.div>
   );
@@ -110,7 +112,9 @@ export default function RoadmapSection() {
             {/* Left: Number -> Dot -> Dashes */}
             <div className="flex justify-end items-center pr-4">
               <motion.div variants={numberVariants}>
-                <Image src="/sources/launch-roadmap/01.svg" alt="01" width={45} height={45} className="h-auto" />
+                <span className="font-adlam text-[55px] leading-none text-transparent [-webkit-text-stroke:2.5px_#4E54C8]">
+                  01
+                </span>
               </motion.div>
               <motion.div variants={dotVariants} className="ml-4 flex items-center">
                 <Image src="/sources/launch-roadmap/roadmap-gold-dots-next-to-number.svg" alt="dot and dashed line" width={109} height={14} className="w-[109px] h-[14px]" />
@@ -168,7 +172,9 @@ export default function RoadmapSection() {
                 <Image src="/sources/launch-roadmap/roadmap-gold-dots-next-to-number.svg" alt="dot and dashed line" width={109} height={14} className="w-[109px] h-[14px] scale-x-[-1]" />
               </motion.div>
               <motion.div variants={numberVariants}>
-                <Image src="/sources/launch-roadmap/02.svg" alt="02" width={45} height={45} className="h-auto" />
+                <span className="font-adlam text-[55px] leading-none text-transparent [-webkit-text-stroke:2.5px_#4E54C8]">
+                  02
+                </span>
               </motion.div>
             </div>
           </motion.div>
@@ -187,7 +193,9 @@ export default function RoadmapSection() {
             {/* Left: Number -> Dot -> Dashes */}
             <div className="flex justify-end items-center pr-4">
               <motion.div variants={numberVariants}>
-                <Image src="/sources/launch-roadmap/03.svg" alt="03" width={45} height={45} className="h-auto" />
+                <span className="font-adlam text-[55px] leading-none text-transparent [-webkit-text-stroke:2.5px_#4E54C8]">
+                  03
+                </span>
               </motion.div>
               <motion.div variants={dotVariants} className="ml-4 flex items-center">
                 <Image src="/sources/launch-roadmap/roadmap-gold-dots-next-to-number.svg" alt="dot and dashed line" width={109} height={14} className="w-[109px] h-[14px]" />
@@ -245,7 +253,9 @@ export default function RoadmapSection() {
                 <Image src="/sources/launch-roadmap/roadmap-gold-dots-next-to-number.svg" alt="dot and dashed line" width={109} height={14} className="w-[109px] h-[14px] scale-x-[-1]" />
               </motion.div>
               <motion.div variants={numberVariants}>
-                <Image src="/sources/launch-roadmap/04.svg" alt="04" width={45} height={45} className="h-auto" />
+                <span className="font-adlam text-[55px] leading-none text-transparent [-webkit-text-stroke:2.5px_#4E54C8]">
+                  04
+                </span>
               </motion.div>
             </div>
           </motion.div>
