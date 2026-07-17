@@ -16,7 +16,7 @@ export default function CTASection() {
       {/* Upper half continues the founder purple */}
       <div className="absolute inset-x-0 top-0 bottom-1/2 bg-[#2D2873]" aria-hidden="true" />
 
-      <div className="relative z-10 w-full max-w-[1250px] mx-auto bg-accent rounded-[36px] overflow-hidden flex flex-col lg:flex-row items-stretch justify-between gap-10 shadow-[0_40px_90px_rgba(12,11,40,0.25)]">
+      <div className="relative z-10 w-full max-w-[1250px] mx-auto bg-accent rounded-[36px] overflow-hidden flex flex-col lg:flex-row items-stretch justify-between gap-0 lg:gap-10 shadow-[0_40px_90px_rgba(12,11,40,0.25)]">
         {/* Left Content */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
@@ -48,7 +48,7 @@ export default function CTASection() {
         </motion.div>
 
         {/* Right Content — phone mockups from Figma */}
-        <div className="relative z-10 flex-shrink-0 flex items-end justify-center lg:justify-end px-8 lg:px-12 pb-0 pt-6 lg:pt-10 self-end">
+        <div className="relative z-10 flex-shrink-0 flex items-end justify-center lg:justify-end px-8 lg:px-12 pb-0 pt-2 lg:pt-10 self-center lg:self-end">
           {/* Outer: scroll entrance from below */}
           <motion.div
             initial={{ opacity: 0, y: 60 }}
@@ -67,7 +67,7 @@ export default function CTASection() {
                 alt="Luqas app preview"
                 width={634}
                 height={450}
-                className="w-full max-w-[440px] lg:max-w-[500px] h-auto object-contain drop-shadow-2xl block translate-y-[24px] origin-bottom scale-[1.15] lg:scale-[1.25]"
+                className="w-full max-w-[440px] lg:max-w-[500px] h-auto object-contain drop-shadow-2xl block translate-y-[24px] origin-bottom scale-[1.2] lg:scale-[1.25]"
               />
             </motion.div>
           </motion.div>

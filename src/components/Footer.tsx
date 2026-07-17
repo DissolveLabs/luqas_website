@@ -29,7 +29,9 @@ export default function Footer() {
         >
           {/* Brand */}
           <motion.div variants={itemVariants} className="flex flex-col items-start">
-            <Image src="/sources/footer/logo-footer.svg" alt="Luqas" width={96} height={100} className="w-[96px] h-[100px]" />
+            <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="cursor-pointer focus:outline-none transition-transform hover:scale-105 active:scale-95" aria-label="Scroll to top">
+              <Image src="/sources/footer/logo-footer.svg" alt="Luqas" width={96} height={100} className="w-[96px] h-[100px]" />
+            </button>
           </motion.div>
 
           {/* Nav links */}

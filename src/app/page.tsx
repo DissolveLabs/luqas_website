@@ -105,6 +105,16 @@ export default function Home() {
                 is in private beta. Join the waitlist to be among the first to call them back.
               </motion.p>
 
+              {/* Mobile Waveform (Only visible on small screens) */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+                className="lg:hidden w-full h-[80px] mb-8 relative flex items-center justify-center"
+              >
+                <HeroWaveform className="w-full max-w-[400px] h-full" />
+              </motion.div>
+
               {/* Waitlist Form */}
               <div id="waitlist" className="flex flex-col gap-4 relative z-10 scroll-mt-24 w-full max-w-[520px]">
                 <MagneticElement>
