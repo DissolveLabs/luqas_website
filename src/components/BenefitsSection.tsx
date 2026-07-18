@@ -121,7 +121,7 @@ export default function BenefitsSection() {
           <motion.div variants={leftCardVariants}>
             <motion.div 
               whileHover={{ y: -6, boxShadow: "0px 25px 60px rgba(212,169,95,0.15)" }}
-              className="bg-white rounded-full aspect-square flex flex-col items-center justify-center p-8 lg:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.03)] border border-black/5 relative group h-full"
+              className="bg-white rounded-full aspect-square flex flex-col items-center justify-center p-6 lg:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.03)] border border-black/5 relative group h-full"
             >
               <motion.div 
                 className="absolute inset-0 rounded-full border-[2px] border-[#D4A95F]/20 pointer-events-none"
@@ -139,9 +139,9 @@ export default function BenefitsSection() {
                 </motion.div>
               </motion.div>
               
-              <motion.div variants={textFadeVariants} className="flex flex-col items-center z-10">
-                <h3 className="font-adlam text-[22px] text-[#222222] mb-3">Priority Access</h3>
-                <p className="text-[16px] text-gray leading-[26px]">
+              <motion.div variants={textFadeVariants} className="flex flex-col items-center z-10 px-2">
+                <h3 className="font-adlam text-[18px] lg:text-[20px] text-[#222222] mb-2 min-h-[52px] flex items-center text-center">Priority Access</h3>
+                <p className="text-[13.5px] lg:text-[14.5px] text-gray leading-[22px] text-center">
                   Skip the line. Founding members get first access to generate voice profiles when we launch.
                 </p>
               </motion.div>
@@ -152,7 +152,7 @@ export default function BenefitsSection() {
           <motion.div variants={centerCardVariants}>
             <motion.div 
               whileHover={{ y: -6, boxShadow: "0px 25px 60px rgba(212,169,95,0.15)" }}
-              className="bg-white rounded-full aspect-square flex flex-col items-center justify-center p-8 lg:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.03)] border border-black/5 relative group h-full"
+              className="bg-white rounded-full aspect-square flex flex-col items-center justify-center p-6 lg:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.03)] border border-black/5 relative group h-full"
             >
               <motion.div 
                 className="absolute inset-0 rounded-full border-[2px] border-[#D4A95F]/20 pointer-events-none"
@@ -170,9 +170,9 @@ export default function BenefitsSection() {
                 </motion.div>
               </motion.div>
 
-              <motion.div variants={textFadeVariants} className="flex flex-col items-center z-10">
-                <h3 className="font-adlam text-[22px] text-[#222222] mb-3">Founding Member Price</h3>
-                <p className="text-[16px] text-gray leading-[26px]">
+              <motion.div variants={textFadeVariants} className="flex flex-col items-center z-10 px-2">
+                <h3 className="font-adlam text-[18px] lg:text-[20px] text-[#222222] mb-2 min-h-[52px] flex items-center text-center">Founding Member Price</h3>
+                <p className="text-[13.5px] lg:text-[14.5px] text-gray leading-[22px] text-center">
                   Lock in a lifetime discount on{" "}
                   <Image src="/sources/Hero/logo-text.svg" alt="Luqas" width={60} height={15} className="h-[12px] w-[30px] inline-block align-baseline" />{" "}
                   Premium. Our way of saying thank you for believing early.
@@ -185,7 +185,7 @@ export default function BenefitsSection() {
           <motion.div variants={rightCardVariants}>
             <motion.div 
               whileHover={{ y: -6, boxShadow: "0px 25px 60px rgba(212,169,95,0.15)" }}
-              className="bg-white rounded-full aspect-square flex flex-col items-center justify-center p-8 lg:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.03)] border border-black/5 relative group h-full"
+              className="bg-white rounded-full aspect-square flex flex-col items-center justify-center p-6 lg:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.03)] border border-black/5 relative group h-full"
             >
               <motion.div 
                 className="absolute inset-0 rounded-full border-[2px] border-[#D4A95F]/20 pointer-events-none"
@@ -203,9 +203,9 @@ export default function BenefitsSection() {
                 </motion.div>
               </motion.div>
 
-              <motion.div variants={textFadeVariants} className="flex flex-col items-center z-10">
-                <h3 className="font-adlam text-[22px] text-[#222222] mb-3">Shape the Product</h3>
-                <p className="text-[16px] text-gray leading-[26px]">
+              <motion.div variants={textFadeVariants} className="flex flex-col items-center z-10 px-2">
+                <h3 className="font-adlam text-[18px] lg:text-[20px] text-[#222222] mb-2 min-h-[52px] flex items-center text-center">Shape the Product</h3>
+                <p className="text-[13.5px] lg:text-[14.5px] text-gray leading-[22px] text-center">
                   Get direct access to our beta testing group and influence the features we build next.
                 </p>
               </motion.div>
