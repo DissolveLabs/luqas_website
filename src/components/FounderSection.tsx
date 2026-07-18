@@ -19,7 +19,7 @@ export default function FounderSection() {
           viewport={{ once: false, margin: "10000px 0px -20% 0px" }}
           className="text-accent font-semibold tracking-[0.18em] uppercase text-[13px] mb-5"
         >
-          Named after a father we still talk about.
+          A NAME THAT CARRIES PURPOSE.
         </motion.span>
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -28,7 +28,7 @@ export default function FounderSection() {
           transition={{ delay: 0.1 }}
           className="font-adlam text-[42px] lg:text-[55px] leading-[1.2] text-white tracking-[-0.03em] mb-7"
         >
-          Named After A Father We Still Talk About.
+          More Than a Name. A Legacy.
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -38,7 +38,7 @@ export default function FounderSection() {
           className="text-[17px] lg:text-[19px] leading-[32px] text-white/95 max-w-[720px]"
         >
           <Image src="/sources/Hero/logo-text-white.svg" alt="Luqas" width={80} height={20} className="h-[15px] w-[37px] inline-block align-baseline" />{" "}
-          is a stylized spelling of Lucas, the name of a co-founder&apos;s late father. We carry his name in ours as a reminder of what this work is for!
+          was named in honor of our co-founder&apos;s late father, Lucas. His values of resilience, kindness, and purpose continue to shape the way we build, serve, and grow.
         </motion.p>
 
         <motion.div
