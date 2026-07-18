@@ -25,6 +25,9 @@ export default function MemorySection() {
     damping: 18,
   });
 
+  const buttonOpacity = useTransform(scrollYProgress, [0.5, 0.65], [0, 1]);
+  const buttonY = useTransform(scrollYProgress, [0.5, 0.65], [20, 0]);
+
   return (
     <section ref={sectionRef} id="preserve" className="w-full pt-16 lg:pt-20 pb-14 px-4 relative overflow-hidden bg-white">
       {/* Background arcs: bottom-left corner + center-bottom (per screenshot) */}
@@ -103,9 +106,7 @@ export default function MemorySection() {
         {/* CTA Button */}
         <div className="flex justify-center mt-10">
           <motion.button
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, margin: "10000px 0px -20% 0px" }}
+            style={{ opacity: buttonOpacity, y: buttonY }}
             onClick={() => lenis?.scrollTo("#why-luqas", { offset: -24 })}
             className="bg-primary text-white font-medium text-[16px] px-8 py-4 rounded-full hover:bg-primary/90 transition-colors flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-105 transform duration-300"
           >
