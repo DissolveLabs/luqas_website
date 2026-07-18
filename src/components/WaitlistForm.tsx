@@ -40,7 +40,7 @@ function makeParticles(): Particle[] {
 }
 
 export default function WaitlistForm({
-  placeholder = "you@email.com",
+  placeholder = "you@mail.com",
   buttonLabel = "Reserve Your Spot",
   variant = "light",
 }: WaitlistFormProps) {
@@ -55,6 +55,12 @@ export default function WaitlistForm({
     e.preventDefault();
     if (submitted || showConfetti || isSubmitting) return;
     
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setErrorMessage("Please enter a valid email address.");
+      return;
+    }
+
     setIsSubmitting(true);
     setErrorMessage("");
 
@@ -133,17 +139,6 @@ export default function WaitlistForm({
                 <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                 <path d="M4 7.00005L10.2 11.65C11.2667 12.45 12.7333 12.45 13.8 11.65L20 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              {/* Mobile Input */}
-              <input
-                type="email"
-                required
-                disabled={showConfetti || isSubmitting}
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="you@mail.com"
-                className="sm:hidden bg-transparent border-none outline-none text-[#222222] w-full min-w-0 text-[14px] placeholder:text-gray disabled:opacity-50"
-              />
-              {/* Desktop Input */}
               <input
                 type="email"
                 required
@@ -151,7 +146,7 @@ export default function WaitlistForm({
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder={placeholder}
-                className="hidden sm:block bg-transparent border-none outline-none text-[#222222] w-full min-w-0 text-[16px] placeholder:text-gray disabled:opacity-50"
+                className="bg-transparent border-none outline-none text-[#222222] w-full min-w-0 text-[14px] sm:text-[16px] placeholder:text-gray disabled:opacity-50"
               />
             </div>
             <motion.button

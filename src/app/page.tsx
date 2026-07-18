@@ -118,7 +118,7 @@ export default function Home() {
               {/* Waitlist Form */}
               <div id="waitlist" className="flex flex-col gap-4 relative z-10 scroll-mt-24 w-full max-w-[520px]">
                 <MagneticElement>
-                  <WaitlistForm placeholder="you@email.com" buttonLabel="Reserve Your Spot" />
+                  <WaitlistForm />
                 </MagneticElement>
 
                 {/* Avatars */}

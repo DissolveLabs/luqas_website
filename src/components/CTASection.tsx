@@ -39,7 +39,7 @@ export default function CTASection() {
           {/* Waitlist Form */}
           <div className="flex flex-col gap-3">
             <MagneticElement>
-              <WaitlistForm placeholder="Enter your email address" buttonLabel="Join the Waitlist" variant="gold" />
+              <WaitlistForm variant="gold" />
             </MagneticElement>
             <span className="text-white/80 text-[13px] ml-4 text-center sm:text-left">
               No spam. Only product updates and your invitation link.
