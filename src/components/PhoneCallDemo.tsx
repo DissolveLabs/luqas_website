@@ -92,6 +92,7 @@ function StatusBar() {
 export default function PhoneCallDemo() {
   const [calling, setCalling] = useState(false);
   const [speakerOn, setSpeakerOn] = useState(true);
+  const [micOn, setMicOn] = useState(true);
   const [seconds, setSeconds] = useState(0);
   const [captionIdx, setCaptionIdx] = useState(0);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -105,6 +106,7 @@ export default function PhoneCallDemo() {
   const startCall = () => {
     setCalling(true);
     setSpeakerOn(true);
+    setMicOn(true);
     setSeconds(0);
     setCaptionIdx(0);
     clearTimers();
@@ -139,7 +141,9 @@ export default function PhoneCallDemo() {
         >
           <StatusBar />
           {/* App name just below the notch */}
-          <div className="absolute top-[62px] inset-x-0 text-center font-adlam text-[17px] tracking-[0.06em] text-primary">LUQAS</div>
+          <div className="absolute top-[54px] inset-x-0 flex justify-center">
+            <Image src="/sources/Hero/logo-text-indigo.svg" alt="Luqas" width={90} height={24} className="h-[20px] w-auto" />
+          </div>
 
           <div className="absolute top-[24%] inset-x-0 flex flex-col items-center gap-4 text-center">
             <Image src="/sources/dad-avatar.jpg" alt="Dad" width={112} height={112} className="w-[112px] h-[112px] rounded-full object-cover border-[3px] border-primary/20" />
@@ -149,7 +153,7 @@ export default function PhoneCallDemo() {
             </div>
           </div>
 
-          <div className="absolute bottom-[12%] inset-x-0 flex flex-col items-center">
+          <div className="absolute bottom-[calc(12%+5px)] inset-x-0 flex flex-col items-center">
             <motion.button
               onClick={startCall}
               whileHover={{ scale: 1.06 }}
@@ -178,10 +182,12 @@ export default function PhoneCallDemo() {
           {/* Content stack: fills from just below the notch to ~16px above the
               bottom edge. Header sits at top, avatar/waveform/text share the
               flexible middle with even gaps, controls pinned near the bottom. */}
-          <div className="absolute inset-x-0 top-[52px] bottom-[16px] flex flex-col items-center px-6">
+          <div className="absolute inset-x-0 top-[54px] bottom-[16px] flex flex-col items-center px-6">
             {/* Caller name (LUQAS) + call duration */}
             <div className="flex flex-col items-center gap-1">
-              <div className="font-adlam text-[17px] tracking-[0.06em] text-primary">LUQAS</div>
+              <div className="flex justify-center">
+                <Image src="/sources/Hero/logo-text-indigo.svg" alt="Luqas" width={90} height={24} className="h-[20px] w-auto" />
+              </div>
               <div className="font-adlam text-[24px] text-[#222222] mt-1">Dad ❤️</div>
               <div className="flex items-center gap-1.5 text-[13px] font-semibold text-gray">
                 <span className="w-2 h-2 rounded-full bg-[#4CAF7D]" /> Live
@@ -196,8 +202,8 @@ export default function PhoneCallDemo() {
                   [0, 0.93, 1.86].map((delay) => (
                     <motion.span
                       key={delay}
-                      initial={{ scale: 1, opacity: 0.7 }}
-                      animate={{ scale: 1.7, opacity: 0 }}
+                      initial={{ scale: 1, opacity: 0 }}
+                      animate={{ scale: 1.7, opacity: [0, 0.7, 0] }}
                       transition={{ duration: 2.8, repeat: Infinity, ease: "easeOut", delay }}
                       className="absolute w-[120px] h-[120px] rounded-full border-2 border-accent/60"
                     />
@@ -227,11 +233,15 @@ export default function PhoneCallDemo() {
             {/* 20px gap, then controls pinned near the bottom */}
             <div className="mt-5 flex items-center justify-center gap-[44px] -translate-y-[25px]">
             <button
-              onClick={() => setSpeakerOn(false)}
-              className={`w-[56px] h-[56px] rounded-full flex items-center justify-center transition-colors ${!speakerOn ? "bg-primary text-white" : "bg-[#EFEFFC] text-primary hover:bg-[#E2E2F8]"}`}
-              aria-label="Speaker off"
+              onClick={() => setMicOn(!micOn)}
+              className={`w-[56px] h-[56px] rounded-full flex items-center justify-center transition-colors ${micOn ? "bg-primary text-white" : "bg-[#EFEFFC] text-primary hover:bg-[#E2E2F8]"}`}
+              aria-label={micOn ? "Mute" : "Unmute"}
             >
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z" /><line x1="23" y1="9" x2="17" y2="15" /><line x1="17" y1="9" x2="23" y2="15" /></svg>
+              {micOn ? (
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
+              ) : (
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/><line x1="2" x2="22" y1="2" y2="22"/></svg>
+              )}
             </button>
             <motion.button
               onClick={endCall}
@@ -243,11 +253,15 @@ export default function PhoneCallDemo() {
               <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12 9c-1.6 0-3.15.25-4.6.72v3.1c0 .39-.23.74-.56.9-.98.49-1.87 1.12-2.66 1.85-.18.18-.43.28-.7.28-.28 0-.53-.11-.71-.29L.29 13.08a.996.996 0 0 1-.29-.7c0-.28.11-.53.29-.71C3.34 8.78 7.46 7 12 7s8.66 1.78 11.71 4.67c.18.18.29.43.29.71 0 .28-.11.53-.29.71l-1.78 2.66a.98.98 0 0 1-.7.28c-.28 0-.53-.11-.71-.28a11.6 11.6 0 0 0-2.66-1.85.998.998 0 0 1-.56-.9v-3.1C15.15 9.25 13.6 9 12 9z" /></svg>
             </motion.button>
             <button
-              onClick={() => setSpeakerOn(true)}
+              onClick={() => setSpeakerOn(!speakerOn)}
               className={`w-[56px] h-[56px] rounded-full flex items-center justify-center transition-colors ${speakerOn ? "bg-primary text-white" : "bg-[#EFEFFC] text-primary hover:bg-[#E2E2F8]"}`}
-              aria-label="Speaker on"
+              aria-label={speakerOn ? "Speaker on" : "Speaker off"}
             >
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z" /><path d="M15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14" /></svg>
+              {speakerOn ? (
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z" /><path d="M15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14" /></svg>
+              ) : (
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z" /><line x1="23" y1="9" x2="17" y2="15" /><line x1="17" y1="9" x2="23" y2="15" /></svg>
+              )}
             </button>
             </div>
           </div>
