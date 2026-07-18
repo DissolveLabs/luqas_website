@@ -72,7 +72,7 @@ export default function RoadmapSection() {
           <motion.div 
             initial="hidden"
             whileInView="show"
-            viewport={{ once: false, margin: "10000px 0px -40% 0px" }}
+            viewport={{ once: false, margin: "10000px 0px -50% 0px" }}
             className="grid grid-cols-[1fr_50px_1fr] md:grid-cols-[1fr_80px_1fr] items-center w-full relative z-10"
           >
             {/* Left: Number -> Dot -> Dashes */}
@@ -109,7 +109,7 @@ export default function RoadmapSection() {
           <motion.div 
             initial="hidden"
             whileInView="show"
-            viewport={{ once: false, margin: "10000px 0px -40% 0px" }}
+            viewport={{ once: false, margin: "10000px 0px -50% 0px" }}
             className="grid grid-cols-[1fr_50px_1fr] md:grid-cols-[1fr_80px_1fr] items-center w-full relative z-10"
           >
             {/* Left: Text */}
@@ -149,7 +149,7 @@ export default function RoadmapSection() {
           <motion.div 
             initial="hidden"
             whileInView="show"
-            viewport={{ once: false, margin: "10000px 0px -40% 0px" }}
+            viewport={{ once: false, margin: "10000px 0px -50% 0px" }}
             className="grid grid-cols-[1fr_50px_1fr] md:grid-cols-[1fr_80px_1fr] items-center w-full relative z-10"
           >
             {/* Left: Number -> Dot -> Dashes */}
@@ -186,7 +186,7 @@ export default function RoadmapSection() {
           <motion.div 
             initial="hidden"
             whileInView="show"
-            viewport={{ once: false, margin: "10000px 0px -40% 0px" }}
+            viewport={{ once: false, margin: "10000px 0px -50% 0px", amount: 0.5 }}
             className="grid grid-cols-[1fr_50px_1fr] md:grid-cols-[1fr_80px_1fr] items-center w-full relative z-10"
           >
             {/* Left: Text */}
