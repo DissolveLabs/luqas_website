@@ -174,7 +174,7 @@ export default function BenefitsSection() {
                 <h3 className="font-adlam text-[18px] lg:text-[20px] text-[#222222] mb-2 min-h-[52px] flex items-center text-center">Founding Member Price</h3>
                 <p className="text-[13.5px] lg:text-[14.5px] text-gray leading-[22px] text-center">
                   Lock in a lifetime discount on{" "}
-                  <Image src="/sources/Hero/logo-text.svg" alt="Luqas" width={60} height={15} className="h-[12px] w-[30px] inline-block align-baseline" />{" "}
+                  <Image src="/sources/Hero/logo-text-inline.svg" alt="Luqas" width={41} height={11} className="h-[10px] w-[37px] lg:h-[11px] lg:w-[41px] inline-block align-middle -translate-y-[1px]" />{" "}
                   Premium. Our way of saying thank you for believing early.
                 </p>
               </motion.div>

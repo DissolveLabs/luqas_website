@@ -33,7 +33,7 @@ export default function PhoneStatic() {
             <span className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/80">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M15 18l-6-6 6-6" /></svg>
             </span>
-            <Image src="/sources/Hero/logo-text-gold.svg" alt="Luqas" width={80} height={20} className="h-5 w-[50px]" />
+            <Image src="/sources/Hero/logo-text-gold-inline.svg" alt="Luqas" width={60} height={16} className="h-[16px] w-[60px] translate-y-[3px]" />
             <span className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/80">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="1.7" /><circle cx="12" cy="12" r="1.7" /><circle cx="12" cy="19" r="1.7" /></svg>
             </span>

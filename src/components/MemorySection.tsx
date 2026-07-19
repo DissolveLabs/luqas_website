@@ -54,7 +54,7 @@ export default function MemorySection() {
               className="text-[16px] lg:text-[17px] leading-[28px] text-[#222222] max-w-[560px]"
             >
               Some voices are too important to fade away.{" "}
-              <Image src="/sources/Hero/logo-text.svg" alt="Luqas" width={42} height={17} className="h-[15px] w-[37px] inline-block align-baseline" />{" "}
+              <Image src="/sources/Hero/logo-text-inline.svg" alt="Luqas" width={44} height={12} className="h-[11px] w-[41px] lg:h-[12px] lg:w-[44px] inline-block align-middle -translate-y-[1px]" />{" "}
               turns a minute of recorded audio into a living conversation. Call. Speak. Be remembered by a voice you know by heart.
             </motion.p>
           </div>

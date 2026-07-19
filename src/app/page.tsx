@@ -101,7 +101,7 @@ export default function Home() {
                 className="text-[19px] leading-[30px] text-[#222222] mb-10 max-w-[560px] tracking-[-0.01em]"
               >
                 The voices that shaped you shouldn&apos;t fade.{" "}
-                <Image src="/sources/Hero/logo-text.svg" alt="Luqas" width={65} height={17} className="h-[17px] w-[65px] inline-block align-baseline" />{" "}
+                <Image src="/sources/Hero/logo-text-inline.svg" alt="Luqas" width={48} height={13} className="h-[13px] w-[48px] inline-block align-middle -translate-y-[1px]" />{" "}
                 is in private beta. Join the waitlist to be among the first to call them back.
               </motion.p>
 
@@ -162,7 +162,7 @@ export default function Home() {
                     }}
                     className="text-primary font-medium text-[14px] ml-1"
                   >
-                    12,482 people are already in line.
+                    1248 people are already in line.
                   </motion.span>
                 </motion.div>
               </div>

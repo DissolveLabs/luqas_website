@@ -53,7 +53,7 @@ export default function Navbar({ showReturnHome = false }: { showReturnHome?: bo
     link.brand ? (
       <span className="inline-flex items-center gap-1.5">
         Why
-        <Image src="/sources/Hero/logo-text.svg" alt="Luqas" width={80} height={20} className="h-[13px] w-[32px]" />
+        <Image src="/sources/Hero/logo-text-inline.svg" alt="Luqas" width={48} height={13} className="h-[13px] w-[48px] translate-y-[1px]" />
       </span>
     ) : (
       link.label
@@ -79,7 +79,7 @@ export default function Navbar({ showReturnHome = false }: { showReturnHome?: bo
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="relative z-10 -mt-2"
           >
-            <Image src="/sources/Hero/logo-text.svg" alt="Luqas" width={60} height={16} className="h-4 w-[40px]" />
+            <Image src="/sources/Hero/logo-text-inline.svg" alt="Luqas" width={52} height={14} className="h-[14px] w-[52px]" />
           </motion.div>
         </a>
 

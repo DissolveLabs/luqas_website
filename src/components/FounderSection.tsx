@@ -37,7 +37,7 @@ export default function FounderSection() {
           transition={{ delay: 0.2 }}
           className="text-[17px] lg:text-[19px] leading-[32px] text-white/95 max-w-[720px]"
         >
-          <Image src="/sources/Hero/logo-text-white.svg" alt="Luqas" width={80} height={20} className="h-[15px] w-[37px] inline-block align-baseline" />{" "}
+          <Image src="/sources/Hero/logo-text-white-inline.svg" alt="Luqas" width={56} height={15} className="h-[14px] w-[52px] lg:h-[15px] lg:w-[56px] inline-block align-middle -translate-y-[1px]" />{" "}
           was named in honor of our co-founder&apos;s late father, Lucas. His values of resilience, kindness, and purpose continue to shape the way we build, serve, and grow.
         </motion.p>
 
@@ -49,7 +49,7 @@ export default function FounderSection() {
           className="flex items-center justify-center gap-2 mx-auto text-accent text-[19px] mt-12 font-adlam"
         >
           The
-          <Image src="/sources/Hero/logo-text-gold.svg" alt="Luqas" width={80} height={20} className="h-[17px] w-[42px] inline-block" />
+          <Image src="/sources/Hero/logo-text-gold-inline.svg" alt="Luqas" width={56} height={15} className="h-[15px] w-[56px] inline-block translate-y-[2px]" />
           team
         </motion.div>
       </div>

@@ -50,7 +50,7 @@ export default function RoadmapSection() {
       <div className="max-w-[800px] w-full flex flex-col items-center text-center">
         <h2 className="font-adlam text-[45px] lg:text-[55px] text-[#222222] tracking-[-0.04em] mb-16 lg:mb-24 flex items-baseline justify-center gap-x-3 flex-wrap">
           The
-          <Image src="/sources/Hero/logo-text.svg" alt="Luqas" width={120} height={30} className="h-[41px] w-[102px] inline-block" />
+          <Image src="/sources/Hero/logo-text-inline.svg" alt="Luqas" width={148} height={40} className="h-[33px] w-[122px] lg:h-[40px] lg:w-[148px] inline-block translate-y-[2px]" />
           Launch Roadmap
         </h2>
         
@@ -99,7 +99,7 @@ export default function RoadmapSection() {
             {/* Right: Text */}
             <div className="flex flex-col items-start justify-center text-left pl-4 md:pl-12">
               <motion.h3 variants={rightTextVariants} className="font-adlam text-[15px] md:text-[22px] text-[#222222] mb-1">Waitlist Launch</motion.h3>
-              <motion.p variants={descVariants} className="text-[12px] md:text-[16px] leading-[1.4] text-gray m-0">Collecting interest and feedback from our early community.</motion.p>
+              <motion.p variants={descVariants} className="text-[12px] md:text-[16px] leading-[1.4] text-gray m-0">Collecting interest and feedback <br className="hidden md:block" /> from our early community.</motion.p>
             </div>
           </motion.div>
 
@@ -115,7 +115,7 @@ export default function RoadmapSection() {
             {/* Left: Text */}
             <div className="flex flex-col items-end justify-center text-right pr-4 md:pr-12">
               <motion.h3 variants={leftTextVariants} className="font-adlam text-[15px] md:text-[22px] text-[#222222] mb-1">Closed Alpha</motion.h3>
-              <motion.p variants={descVariants} className="text-[12px] md:text-[16px] leading-[1.4] text-gray m-0">First voice profiles generated for a small testing group.</motion.p>
+              <motion.p variants={descVariants} className="text-[12px] md:text-[16px] leading-[1.4] text-gray m-0">First voice profiles generated <br className="hidden md:block" /> for a small testing group.</motion.p>
             </div>
             
             {/* Center: Icon */}
@@ -176,7 +176,7 @@ export default function RoadmapSection() {
             {/* Right: Text */}
             <div className="flex flex-col items-start justify-center text-left pl-4 md:pl-12">
               <motion.h3 variants={rightTextVariants} className="font-adlam text-[15px] md:text-[22px] text-[#222222] mb-1">Beta Release</motion.h3>
-              <motion.p variants={descVariants} className="text-[12px] md:text-[16px] leading-[1.4] text-gray m-0">Waitlist members get invited to create their profiles.</motion.p>
+              <motion.p variants={descVariants} className="text-[12px] md:text-[16px] leading-[1.4] text-gray m-0">Waitlist members get invited <br className="hidden md:block" /> to create their profiles.</motion.p>
             </div>
           </motion.div>
 
@@ -193,8 +193,8 @@ export default function RoadmapSection() {
             <div className="flex flex-col items-end justify-center text-right pr-4 md:pr-12">
               <motion.h3 variants={leftTextVariants} className="font-adlam text-[15px] md:text-[22px] text-[#222222] mb-1">Public Launch</motion.h3>
               <motion.p variants={descVariants} className="text-[12px] md:text-[16px] leading-[1.4] text-gray m-0">
-                <Image src="/sources/Hero/logo-text.svg" alt="Luqas" width={55} height={14} className="h-[10px] w-[25px] md:h-[12px] md:w-[30px] inline-block align-baseline" />{" "}
-                becomes available on App Store and Play Store.
+                <Image src="/sources/Hero/logo-text-inline.svg" alt="Luqas" width={41} height={11} className="h-[9px] w-[33px] md:h-[11px] md:w-[41px] inline-block align-middle -translate-y-[1px]" />{" "}
+                becomes available on <br className="hidden md:block" /> App Store and Play Store.
               </motion.p>
             </div>
             

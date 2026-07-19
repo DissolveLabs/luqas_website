@@ -57,7 +57,7 @@ export default function RemembersSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "10000px 0px -20% 0px" }}
           transition={{ delay: 0.1 }}
-          className="font-adlam text-[42px] lg:text-[55px] leading-[1.15] text-[#222222] tracking-[-0.04em] mb-6 text-center max-w-[720px]"
+          className="font-adlam text-[32px] sm:text-[42px] lg:text-[55px] leading-[1.15] text-[#222222] tracking-[-0.04em] mb-6 text-center max-w-[1200px]"
         >
           It Remembers, So You Never Start Over.
         </motion.h2>
@@ -69,7 +69,7 @@ export default function RemembersSection() {
           className="text-[17px] lg:text-[19px] leading-[30px] text-[#222222] text-center max-w-[760px] mb-16"
         >
           Most voice tools forget you the moment you hang up.{" "}
-          <Image src="/sources/Hero/logo-text.svg" alt="Luqas" width={80} height={20} className="h-[15px] w-[37px] inline-block align-baseline" />{" "}
+          <Image src="/sources/Hero/logo-text-inline.svg" alt="Luqas" width={48} height={13} className="h-[12px] w-[44px] lg:h-[13px] lg:w-[48px] inline-block align-middle -translate-y-[1px]" />{" "}
           keeps the thread of your life, so every call feels like continuing, never like introducing yourself again.
         </motion.p>
 
