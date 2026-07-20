@@ -23,7 +23,7 @@ export default function LogoArcs({
       duration: 4,
       repeat: Infinity,
       delay: delay,
-      ease: "easeInOut",
+      ease: "easeInOut" as const,
     },
     style: { transformOrigin: "40px 54px" }
   });
