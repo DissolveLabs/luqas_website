@@ -9,8 +9,8 @@ export default function FounderSection() {
   return (
     <section id="why-luqas" className="w-full bg-[#2D2873] relative overflow-hidden pt-24 lg:pt-28 pb-[340px] px-4 mt-12 scroll-mt-0">
       {/* Concentric arc decorations */}
-      <LogoArcs className="absolute top-[-120px] right-[-140px] w-[480px] opacity-10 pointer-events-none" stroke="#FFFFFF" strokeWidth={6} />
-      <LogoArcs className="absolute bottom-[-40px] left-[-160px] w-[560px] opacity-10 pointer-events-none" stroke="#FFFFFF" strokeWidth={6} />
+      <LogoArcs className="absolute top-[-20px] right-[-140px] w-[480px] opacity-10 pointer-events-none rotate-180" stroke="#FFFFFF" strokeWidth={6} animated />
+      <LogoArcs className="absolute bottom-[280px] left-[-160px] w-[560px] opacity-10 pointer-events-none" stroke="#FFFFFF" strokeWidth={6} animated />
 
       <div className="w-full max-w-[820px] mx-auto flex flex-col items-center text-center relative z-10">
         <motion.span
