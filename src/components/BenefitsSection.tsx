@@ -1,10 +1,13 @@
 "use client";
 
+import { useState } from "react";
 import { motion, type Variants } from "framer-motion";
 import Image from "next/image";
 import ConstellationGrid from "@/components/ConstellationGrid";
 
 export default function BenefitsSection() {
+  const [isWireframe, setIsWireframe] = useState(false);
+
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     show: {
@@ -137,13 +140,14 @@ export default function BenefitsSection() {
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                   whileHover={{ rotate: [0, -10, 10, -10, 0], scale: 1.1, transition: { duration: 0.5 } }}
                 >
-                  <svg width="73" height="73" viewBox="0 0 73 73" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-sm">
-                    {/* Bottom pill */}
-                    <rect x="16" y="48" width="41" height="12" rx="6" fill="#4E54C8" opacity="0.3" />
-                    {/* Middle pill */}
-                    <rect x="16" y="32" width="41" height="12" rx="6" fill="#4E54C8" opacity="0.6" />
-                    {/* Top pill lifting out */}
-                    <rect x="22" y="14" width="41" height="12" rx="6" fill="#D4A95F" style={{ transform: "rotate(-8deg)", transformOrigin: "22px 14px" }} />
+                  <svg width="73" height="73" viewBox="0 0 73 73" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-sm group-hover:scale-105 transition-transform duration-300">
+                    {/* Lock Body */}
+                    <rect x="22" y="32" width="29" height="23" rx="4" fill="#4E54C8" />
+                    {/* Keyhole */}
+                    <circle cx="36.5" cy="41" r="3" fill="white" />
+                    <path d="M35 43h3l-1 6h-1l-1-6z" fill="white" />
+                    {/* Shackle that lifts and rotates on hover */}
+                    <path className="origin-[36.5px_32px] transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:-translate-y-2 group-hover:-rotate-[15deg]" d="M27 32V24C27 18.4772 31.4772 14 37 14C42.5228 14 47 18.4772 47 24V32" stroke="#D4A95F" strokeWidth="5" strokeLinecap="round" />
                   </svg>
                 </motion.div>
               </motion.div>
@@ -175,19 +179,34 @@ export default function BenefitsSection() {
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                   whileHover={{ rotate: [0, -10, 10, -10, 0], scale: 1.1, transition: { duration: 0.5 } }}
                 >
-                  <svg width="73" height="73" viewBox="0 0 73 73" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-sm" style={{ transform: "rotate(-10deg)", transformOrigin: "center" }}>
-                    {/* Gold Tag Pill */}
-                    <rect x="10" y="20" width="53" height="33" rx="16.5" fill="#D4A95F" />
-                    <circle cx="22" cy="36.5" r="5" fill="white" />
-                    {/* Lock */}
-                    <path d="M41 33V30C41 27.2386 43.2386 25 46 25C48.7614 25 51 27.2386 51 30V33" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
-                    <rect x="39" y="33" width="14" height="11" rx="2.5" fill="white" />
+                  <svg width="73" height="73" viewBox="0 0 73 73" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-sm group-hover:scale-105 transition-transform duration-300" style={{ transform: "rotate(-5deg)", transformOrigin: "center" }}>
+                    {/* Solid Ticket Base */}
+                    <rect x="12" y="16" width="49" height="41" rx="6" fill="#F7F8FC" stroke="#D4A95F" strokeWidth="1.5" />
+                    {/* Dashed inner border */}
+                    <rect x="16" y="20" width="41" height="33" rx="3" stroke="#D4A95F" strokeWidth="1.5" strokeDasharray="3 3" opacity="0.7" />
+                    
+                    {/* Ticket cutouts on the sides */}
+                    <circle cx="12" cy="36.5" r="6" fill="white" stroke="#D4A95F" strokeWidth="1.5" />
+                    <circle cx="61" cy="36.5" r="6" fill="white" stroke="#D4A95F" strokeWidth="1.5" />
+                    
+                    {/* Mask out the cutout borders that overlap the ticket inside */}
+                    <rect x="6" y="30" width="6" height="13" fill="white" />
+                    <rect x="61" y="30" width="6" height="13" fill="white" />
+
+                    {/* A star for Tier One */}
+                    <path d="M36.5 24L38 29L43 30.5L38 32L36.5 37L35 32L30 30.5L35 29L36.5 24Z" fill="#D4A95F" />
+                    
+                    {/* Fake text / price lines */}
+                    <rect x="25" y="40" width="23" height="3" rx="1.5" fill="#4E54C8" opacity="0.6" />
+                    <rect x="29" y="46" width="15" height="3" rx="1.5" fill="#4E54C8" opacity="0.3" />
                   </svg>
                 </motion.div>
               </motion.div>
 
               <motion.div variants={textFadeVariants} className="flex flex-col items-center z-10 px-2">
-                <h3 className="font-adlam text-[18px] lg:text-[20px] text-[#222222] mb-2 min-h-[52px] flex items-center text-center">Founding Member Price</h3>
+                <h3 className="font-adlam text-[18px] lg:text-[20px] text-[#222222] mb-2 min-h-[52px] flex items-center justify-center text-center w-full">
+                  Founding Member Price
+                </h3>
                 <p className="text-[13.5px] lg:text-[14.5px] text-gray leading-[22px] text-center">
                   Lock in a lifetime discount on{" "}
                   <Image src="/sources/Hero/logo-text-inline.svg" alt="Luqas" width={41} height={11} className="h-[10px] w-[37px] lg:h-[11px] lg:w-[41px] inline-block align-middle -translate-y-[1px]" />{" "}
@@ -215,17 +234,26 @@ export default function BenefitsSection() {
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                   whileHover={{ rotate: [0, -10, 10, -10, 0], scale: 1.1, transition: { duration: 0.5 } }}
                 >
-                  <svg width="73" height="73" viewBox="0 0 73 73" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-sm">
-                    {/* Central Sphere */}
-                    <circle cx="36.5" cy="36.5" r="15" fill="#4E54C8" />
-                    {/* Left Hand Cupping */}
-                    <path d="M 23 18 C 9 26 9 47 23 55" stroke="#D4A95F" strokeWidth="6" strokeLinecap="round" />
-                    {/* Right Hand Cupping */}
-                    <path d="M 50 18 C 64 26 64 47 50 55" stroke="#D4A95F" strokeWidth="6" strokeLinecap="round" />
-                    {/* Subtle molding sparkles */}
-                    <circle cx="36.5" cy="10" r="2.5" fill="#4E54C8" opacity="0.5"/>
-                    <circle cx="36.5" cy="63" r="2.5" fill="#4E54C8" opacity="0.5"/>
-                  </svg>
+                  <div className="relative w-[73px] h-[73px] flex items-center justify-center cursor-pointer" onClick={() => setIsWireframe(!isWireframe)}>
+                    {/* The UI Container */}
+                    <div className={`relative w-[60px] h-[70px] rounded-[10px] overflow-hidden transition-all duration-500 shadow-sm ${isWireframe ? "bg-white border-2 border-gray/30 border-dashed" : "bg-gradient-to-br from-[#4E54C8] to-[#3a3f9e]"}`}>
+                      
+                      {/* UI Elements */}
+                      <div className={`absolute top-2 left-2 w-4 h-4 rounded-full transition-all duration-500 ${isWireframe ? "border border-gray/40 border-dashed" : "bg-white/20"}`} />
+                      <div className={`absolute top-2.5 right-2 w-6 h-1.5 rounded-full transition-all duration-500 ${isWireframe ? "border border-gray/40 border-dashed" : "bg-white/20"}`} />
+                      <div className={`absolute top-8 left-2 right-2 h-[22px] rounded-[6px] transition-all duration-500 ${isWireframe ? "border-2 border-gray/40 border-dashed" : "bg-white/90 shadow-sm"}`} />
+                      <div className={`absolute bottom-2 inset-x-2 h-4 rounded-[4px] transition-all duration-500 ${isWireframe ? "border border-gray/40 border-dashed" : "bg-[#D4A95F]"}`} />
+
+                    </div>
+                    {/* Floating Toggle Switch */}
+                    <div className="absolute -bottom-2 w-[34px] h-[18px] bg-white rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.12)] border border-gray/10 flex items-center px-[3px] transition-colors" onClick={(e) => { e.stopPropagation(); setIsWireframe(!isWireframe); }}>
+                      <motion.div 
+                        animate={{ x: isWireframe ? 0 : 16 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                        className={`w-3 h-3 rounded-full ${isWireframe ? "bg-gray/40" : "bg-primary"}`}
+                      />
+                    </div>
+                  </div>
                 </motion.div>
               </motion.div>
 
