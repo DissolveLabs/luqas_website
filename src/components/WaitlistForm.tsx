@@ -132,9 +132,9 @@ export default function WaitlistForm({
             onSubmit={handleSubmit}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="flex items-center bg-white shadow-[0px_12px_24px_rgba(78,84,200,0.125)] rounded-full p-1.5 w-full group transition-all duration-300 hover:shadow-[0px_20px_40px_rgba(78,84,200,0.2)]"
+            className="flex max-[400px]:flex-col items-center bg-white shadow-[0px_12px_24px_rgba(78,84,200,0.125)] max-[400px]:rounded-[20px] rounded-full p-1.5 w-full group transition-all duration-300 hover:shadow-[0px_20px_40px_rgba(78,84,200,0.2)] max-[400px]:gap-1.5"
           >
-            <div className="flex items-center pl-4 sm:pl-6 gap-3 flex-1 min-w-0 h-[48px]">
+            <div className="flex items-center pl-4 sm:pl-6 gap-3 flex-1 w-full min-w-0 h-[48px]">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0 text-primary group-focus-within:animate-pulse">
                 <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                 <path d="M4 7.00005L10.2 11.65C11.2667 12.45 12.7333 12.45 13.8 11.65L20 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -146,7 +146,7 @@ export default function WaitlistForm({
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder={placeholder}
-                className="bg-transparent border-none outline-none text-[#222222] w-full min-w-0 text-[14px] sm:text-[16px] placeholder:text-gray disabled:opacity-50"
+                className="bg-transparent border-none outline-none text-[#222222] w-full min-w-0 text-[14px] sm:text-[16px] placeholder:text-gray disabled:opacity-50 text-ellipsis overflow-hidden whitespace-nowrap"
               />
             </div>
             <motion.button
@@ -154,7 +154,7 @@ export default function WaitlistForm({
               disabled={isSubmitting || showConfetti}
               whileHover={(showConfetti || isSubmitting) ? undefined : { scale: 1.05, boxShadow: "0px 0px 15px rgba(78,84,200,0.5)" }}
               whileTap={(showConfetti || isSubmitting) ? undefined : { scale: 0.95 }}
-              className="bg-primary text-white font-medium text-[15px] sm:text-[16px] px-6 py-[14px] rounded-full flex-shrink-0 text-center whitespace-nowrap disabled:opacity-70 flex items-center justify-center min-w-[150px]"
+              className="bg-primary text-white font-medium text-[14px] sm:text-[16px] px-4 sm:px-6 py-[12px] sm:py-[14px] rounded-full flex-shrink-0 text-center whitespace-nowrap disabled:opacity-70 flex items-center justify-center min-w-[120px] sm:min-w-[150px] max-[400px]:w-full"
             >
               {isSubmitting ? (
                 <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
