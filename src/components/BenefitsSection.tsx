@@ -2,16 +2,7 @@
 
 import { motion, type Variants } from "framer-motion";
 import Image from "next/image";
-
-const floatingDots = [
-  { left: "10%", size: 4, duration: 25, delay: 0, color: "#4E54C8" },
-  { left: "25%", size: 6, duration: 32, delay: 5, color: "#D4A95F" },
-  { left: "40%", size: 3, duration: 20, delay: 2, color: "#4E54C8" },
-  { left: "55%", size: 5, duration: 28, delay: 12, color: "#D4A95F" },
-  { left: "70%", size: 4, duration: 22, delay: 7, color: "#4E54C8" },
-  { left: "85%", size: 7, duration: 35, delay: 1, color: "#D4A95F" },
-  { left: "95%", size: 3, duration: 18, delay: 8, color: "#4E54C8" },
-];
+import ConstellationGrid from "@/components/ConstellationGrid";
 
 export default function BenefitsSection() {
   const containerVariants: Variants = {
@@ -89,33 +80,7 @@ export default function BenefitsSection() {
 
   return (
     <section id="early-access" className="w-full bg-white py-14 lg:py-20 px-4 relative overflow-hidden scroll-mt-4">
-      {/* Floating Memory Dots */}
-      <div className="absolute inset-0 pointer-events-none">
-        {floatingDots.map((dot, i) => (
-          <motion.div
-            key={i}
-            className="absolute rounded-full"
-            style={{
-              left: dot.left,
-              width: dot.size,
-              height: dot.size,
-              backgroundColor: dot.color,
-              boxShadow: `0 0 10px ${dot.color}`,
-            }}
-            animate={{
-              top: ["110%", "-10%"],
-              opacity: [0, 0.5, 0.5, 0],
-            }}
-            transition={{
-              duration: dot.duration,
-              repeat: Infinity,
-              ease: "linear",
-              delay: dot.delay,
-            }}
-          />
-        ))}
-      </div>
-
+      <ConstellationGrid rgbColor="78, 84, 200" />
       <div className="w-full max-w-[1440px] flex flex-col items-center mx-auto text-center relative z-10">
         
         <motion.div 

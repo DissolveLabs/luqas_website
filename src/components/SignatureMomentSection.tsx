@@ -67,7 +67,7 @@ export default function SignatureMomentSection() {
             transition={{ delay: 0.1 }}
             className="font-adlam text-[42px] lg:text-[55px] leading-[1.15] text-white tracking-[-0.03em] mb-10 max-w-[480px]"
           >
-            Not A Chatbot. A Phone Call.
+            Hears You Now. Remembers You Later.
           </motion.h2>
 
           <div className="flex flex-col gap-5">
