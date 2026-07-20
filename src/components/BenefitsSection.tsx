@@ -79,7 +79,7 @@ export default function BenefitsSection() {
 
   return (
     <section id="early-access" className="w-full bg-white py-14 lg:py-20 px-4 relative scroll-mt-4">
-      <div className="w-full max-w-[1440px] flex flex-col items-center mx-auto text-center">
+      <div className="w-full max-w-[1440px] flex flex-col items-center mx-auto text-center relative z-10">
         
         <motion.div 
           className="flex flex-col items-center w-full"
@@ -135,7 +135,14 @@ export default function BenefitsSection() {
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                   whileHover={{ rotate: [0, -10, 10, -10, 0], scale: 1.1, transition: { duration: 0.5 } }}
                 >
-                  <Image src="/sources/rewards-of-being-early/Rewards-Priority-voice-sync.svg" alt="Priority Voice Sync" width={73} height={73} className="drop-shadow-sm" />
+                  <svg width="73" height="73" viewBox="0 0 73 73" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-sm">
+                    {/* Bottom pill */}
+                    <rect x="16" y="48" width="41" height="12" rx="6" fill="#4E54C8" opacity="0.3" />
+                    {/* Middle pill */}
+                    <rect x="16" y="32" width="41" height="12" rx="6" fill="#4E54C8" opacity="0.6" />
+                    {/* Top pill lifting out */}
+                    <rect x="22" y="14" width="41" height="12" rx="6" fill="#D4A95F" style={{ transform: "rotate(-8deg)", transformOrigin: "22px 14px" }} />
+                  </svg>
                 </motion.div>
               </motion.div>
               
@@ -166,7 +173,14 @@ export default function BenefitsSection() {
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                   whileHover={{ rotate: [0, -10, 10, -10, 0], scale: 1.1, transition: { duration: 0.5 } }}
                 >
-                  <Image src="/sources/rewards-of-being-early/Rewards-founding-member-price.svg" alt="Founding Member Price" width={73} height={73} className="drop-shadow-sm" />
+                  <svg width="73" height="73" viewBox="0 0 73 73" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-sm" style={{ transform: "rotate(-10deg)", transformOrigin: "center" }}>
+                    {/* Gold Tag Pill */}
+                    <rect x="10" y="20" width="53" height="33" rx="16.5" fill="#D4A95F" />
+                    <circle cx="22" cy="36.5" r="5" fill="white" />
+                    {/* Lock */}
+                    <path d="M41 33V30C41 27.2386 43.2386 25 46 25C48.7614 25 51 27.2386 51 30V33" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
+                    <rect x="39" y="33" width="14" height="11" rx="2.5" fill="white" />
+                  </svg>
                 </motion.div>
               </motion.div>
 
@@ -199,7 +213,17 @@ export default function BenefitsSection() {
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                   whileHover={{ rotate: [0, -10, 10, -10, 0], scale: 1.1, transition: { duration: 0.5 } }}
                 >
-                  <Image src="/sources/rewards-of-being-early/Rewards-shape-the-product.svg" alt="Shape the Product" width={73} height={73} className="drop-shadow-sm" />
+                  <svg width="73" height="73" viewBox="0 0 73 73" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-sm">
+                    {/* Central Sphere */}
+                    <circle cx="36.5" cy="36.5" r="15" fill="#4E54C8" />
+                    {/* Left Hand Cupping */}
+                    <path d="M 23 18 C 9 26 9 47 23 55" stroke="#D4A95F" strokeWidth="6" strokeLinecap="round" />
+                    {/* Right Hand Cupping */}
+                    <path d="M 50 18 C 64 26 64 47 50 55" stroke="#D4A95F" strokeWidth="6" strokeLinecap="round" />
+                    {/* Subtle molding sparkles */}
+                    <circle cx="36.5" cy="10" r="2.5" fill="#4E54C8" opacity="0.5"/>
+                    <circle cx="36.5" cy="63" r="2.5" fill="#4E54C8" opacity="0.5"/>
+                  </svg>
                 </motion.div>
               </motion.div>
 

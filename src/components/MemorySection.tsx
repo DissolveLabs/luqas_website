@@ -110,10 +110,7 @@ export default function MemorySection() {
             onClick={() => lenis?.scrollTo("#why-luqas", { offset: -24 })}
             className="bg-primary text-white font-medium text-[16px] px-8 py-4 rounded-full hover:bg-primary/90 transition-colors flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-105 transform duration-300"
           >
-            Our Commitment To Privacy
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
+            Committed to Your Privacy
           </motion.button>
         </div>
       </div>

@@ -36,7 +36,7 @@ export default function Home() {
     }
   });
 
-  const headline = "Some Voices Are Worth Calling Back.";
+  const headline = "Some Voices Are Worth Hearing Back from Again.";
   const words = headline.split(" ");
 
   const containerVariants: Variants = {

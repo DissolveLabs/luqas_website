@@ -8,10 +8,10 @@ import { useLenis } from "@studio-freight/react-lenis";
 import { Menu, X } from "lucide-react";
 
 const NAV_LINKS = [
-  { label: "How it works", href: "#how-it-works" },
   { label: "The Call", href: "#the-call" },
   { label: "Memory", href: "#memory" },
   { label: "Early access", href: "#early-access" },
+  { label: "Roadmap", href: "#how-it-works" },
   { label: "Why Luqas", href: "#why-luqas", brand: true },
 ];
 
@@ -67,8 +67,8 @@ export default function Navbar({ showReturnHome = false }: { showReturnHome?: bo
           onClick={(e) => handleNavClick(e, "#hero")}
           className="flex flex-col items-center justify-center relative cursor-pointer"
         >
-          <div className="w-[45px] h-[45px] flex items-center justify-center">
-            <Image src="/sources/Hero/logo.svg" alt="Luqas Logo" width={45} height={45} className="w-full h-full object-contain" />
+          <div className="w-[65px] h-[65px] flex items-center justify-center">
+            <Image src="/sources/Hero/logo.svg" alt="Luqas Logo" width={65} height={65} className="w-full h-full object-contain" />
           </div>
           <motion.div
             initial={false}
