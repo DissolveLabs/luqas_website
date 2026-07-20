@@ -65,28 +65,29 @@ export default function Navbar({ showReturnHome = false }: { showReturnHome?: bo
         <a
           href="#hero"
           onClick={(e) => handleNavClick(e, "#hero")}
-          className="flex flex-col items-center justify-center relative cursor-pointer"
+          className="flex flex-col items-center justify-center cursor-pointer"
         >
-          <div className="w-[65px] h-[65px] flex items-center justify-center">
-            <Image src="/sources/Hero/logo.svg" alt="Luqas Logo" width={65} height={65} className="w-full h-full object-contain" />
+          <div className="w-[65px] flex items-center justify-center">
+            <Image src="/sources/Hero/logo.svg" alt="Luqas Logo" width={65} height={34} className="w-full h-auto object-contain" />
           </div>
-          <motion.div
-            initial={false}
-            animate={{
-              y: shouldHideText ? -20 : 0,
-              opacity: shouldHideText ? 0 : 1,
-            }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="relative z-10 -mt-2"
-          >
-            <Image src="/sources/Hero/logo-text-inline.svg" alt="Luqas" width={52} height={14} className="h-[14px] w-[52px]" />
-          </motion.div>
+          <div className="absolute left-1/2 top-1/2 mt-4 -translate-x-1/2 -translate-y-1/2 lg:relative lg:left-auto lg:top-auto lg:mt-2 lg:translate-x-0 lg:translate-y-0 z-10">
+            <motion.div
+              initial={false}
+              animate={{
+                y: shouldHideText ? -20 : 0,
+                opacity: shouldHideText ? 0 : 1,
+              }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+            >
+              <Image src="/sources/Hero/logo-text-inline.svg" alt="Luqas" width={52} height={14} className="h-[14px] w-[52px]" />
+            </motion.div>
+          </div>
         </a>
 
         {!showReturnHome ? (
           <>
             {/* Desktop Navigation */}
-            <div className="hidden md:flex gap-9 items-center">
+            <div className="hidden lg:flex gap-9 items-center">
               {NAV_LINKS.map((link) => (
                 <a
                   key={link.href}
@@ -99,7 +100,7 @@ export default function Navbar({ showReturnHome = false }: { showReturnHome?: bo
               ))}
             </div>
 
-            <a href="#waitlist" onClick={(e) => handleNavClick(e, "#waitlist")} className="hidden md:block">
+            <a href="#waitlist" onClick={(e) => handleNavClick(e, "#waitlist")} className="hidden lg:block">
               <motion.button
                 whileHover={{ scale: 1.05, boxShadow: "0px 0px 15px rgba(212,169,95,0.5)" }}
                 whileTap={{ scale: 0.95 }}
@@ -113,13 +114,15 @@ export default function Navbar({ showReturnHome = false }: { showReturnHome?: bo
             </a>
 
             {/* Mobile Menu Toggle */}
-            <button
-              className="md:hidden flex items-center justify-center p-2 text-[#222222] hover:text-primary transition-colors"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle mobile menu"
-            >
-              {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-            </button>
+            <div className="lg:hidden w-[65px] flex justify-end">
+              <button
+                className="flex items-center justify-center p-2 -mr-2 text-[#222222] hover:text-primary transition-colors"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                aria-label="Toggle mobile menu"
+              >
+                {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+              </button>
+            </div>
           </>
         ) : (
           <Link href="/">
@@ -139,7 +142,7 @@ export default function Navbar({ showReturnHome = false }: { showReturnHome?: bo
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.2 }}
-              className="absolute top-24 left-4 right-4 bg-white shadow-[0_15px_40px_rgba(0,0,0,0.1)] rounded-3xl p-6 flex flex-col gap-5 z-40 md:hidden border border-gray/10"
+              className="absolute top-24 left-4 right-4 bg-white shadow-[0_15px_40px_rgba(0,0,0,0.1)] rounded-3xl p-6 flex flex-col gap-5 z-40 lg:hidden border border-gray/10"
             >
               {NAV_LINKS.map((link, i) => (
                 <div key={link.href} className="flex flex-col gap-5">
