@@ -134,13 +134,13 @@ export default function BenefitsSection() {
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
               />
               
-              <motion.div variants={iconVariants} className="mb-6 z-10">
+              <motion.div variants={iconVariants} className="mb-6 z-10 h-[85px] flex items-center justify-center">
                 <motion.div
                   animate={{ scale: [1, 1.05, 1] }}
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                   whileHover={{ rotate: [0, -10, 10, -10, 0], scale: 1.1, transition: { duration: 0.5 } }}
                 >
-                  <svg width="73" height="73" viewBox="0 0 73 73" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-sm group-hover:scale-105 transition-transform duration-300">
+                  <svg width="93" height="93" viewBox="0 0 73 73" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-sm group-hover:scale-105 transition-transform duration-300">
                     {/* Lock Body */}
                     <rect x="22" y="32" width="29" height="23" rx="4" fill="#4E54C8" />
                     {/* Keyhole */}
@@ -173,13 +173,13 @@ export default function BenefitsSection() {
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
               />
               
-              <motion.div variants={iconVariants} className="mb-6 z-10">
+              <motion.div variants={iconVariants} className="mb-6 z-10 h-[85px] flex items-center justify-center">
                 <motion.div
                   animate={{ scale: [1, 1.05, 1] }}
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                   whileHover={{ rotate: [0, -10, 10, -10, 0], scale: 1.1, transition: { duration: 0.5 } }}
                 >
-                  <svg width="73" height="73" viewBox="0 0 73 73" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-sm group-hover:scale-105 transition-transform duration-300" style={{ transform: "rotate(-5deg)", transformOrigin: "center" }}>
+                  <svg width="88" height="88" viewBox="0 0 73 73" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-sm group-hover:scale-105 transition-transform duration-300" style={{ transform: "rotate(-5deg)", transformOrigin: "center" }}>
                     {/* Solid Ticket Base */}
                     <rect x="12" y="16" width="49" height="41" rx="6" fill="#F7F8FC" stroke="#D4A95F" strokeWidth="1.5" />
                     {/* Dashed inner border */}
@@ -228,7 +228,7 @@ export default function BenefitsSection() {
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
               />
               
-              <motion.div variants={iconVariants} className="mb-6 z-10">
+              <motion.div variants={iconVariants} className="mb-6 z-10 h-[85px] flex items-center justify-center">
                 <motion.div
                   animate={{ scale: [1, 1.05, 1] }}
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}

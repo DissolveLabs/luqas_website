@@ -31,7 +31,7 @@ export default function ConstellationGrid({
     let height = 0;
     let nodes: Node[] = [];
     
-    let mouse = { x: -1000, y: -1000 };
+    const mouse = { x: -1000, y: -1000 };
     
     const handleMouseMove = (e: MouseEvent) => {
       const rect = canvas.getBoundingClientRect();

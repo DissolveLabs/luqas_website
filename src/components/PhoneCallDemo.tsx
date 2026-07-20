@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence, useAnimationFrame } from "framer-motion";
+import { motion, useAnimationFrame } from "framer-motion";
 
 // Dialogue lines from the Claude Design blueprint (call captions).
 const CAPTIONS = [
