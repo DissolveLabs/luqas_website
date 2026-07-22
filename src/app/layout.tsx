@@ -15,8 +15,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Luqas Waitlist",
+  title: "LUQAS",
   description: "Preserve the voices that shaped who you are.",
+  icons: {
+    icon: "/sources/Hero/logo.svg",
+    shortcut: "/sources/Hero/logo.svg",
+    apple: "/sources/Hero/logo.svg",
+  },
 };
 
 export default function RootLayout({
